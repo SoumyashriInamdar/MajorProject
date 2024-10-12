@@ -72,15 +72,19 @@
             <div class="box-custom-2-inner">
               <h2 id="signup" class="wow fadeIn">Marketing That Generates Results</h2>
               <h4 class="text-default wow fadeIn" data-wow-delay=".2s">Get the free checklist with 7 ways to improve your business.</h4>
+             
               <form class="rd-form rd-mailform form-shadow block-11 ot50" id="signupForm">
   <div class="form-wrap">
     <input class="form-input text-center" id="subscribe-form-email" type="email" name="email" required>
     <label class="form-label text-center" for="subscribe-form-email">Your E-mail</label>
-  </div>
+  </div>                                                                            
+
   <div class="form-button">
-    <button class="button button-block button-primary button-winona" type="button" onclick="submitForm()">Sign Up</button>
+    <button class="button button-block button-primary button-winona" type="submit">Sign Up</button>
   </div>
 </form>
+             
+              
             </div>
           </div>
         </div>
@@ -398,8 +402,10 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-<script>
-  document.getElementById('signup-form').addEventListener('submit', function(event) {
+
+    <script>
+  // Use the correct ID for the form element
+  document.getElementById('signupForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission behavior
     
     // Get email value from the form
@@ -409,7 +415,7 @@
     var data = 'email=' + encodeURIComponent(email);
     
     // Send data to Google Apps Script
-    fetch('https://script.google.com/macros/s/AKfycbzodITz35NlKMoJYgwXfqgHwHJiD--D6ErMFNi2n22HDVYAAnJyrFBKxlmABeN-lWEtMA/exec', { // Replace with your Google Apps Script Web App URL
+    fetch('https://script.google.com/macros/s/AKfycbzodITz35NlKMoJYgwXfqgHwHJiD--D6ErMFNi2n22HDVYAAnJyrFBKxlmABeN-lWEtMA/exec', { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',  // Make sure data is encoded properly
