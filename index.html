@@ -406,35 +406,31 @@
     <script>
   // Use the correct ID for the form element
   document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission behavior
-    
-    // Get email value from the form
-    var email = document.getElementById('subscribe-form-email').value;
-    
-    // Prepare data for sending
-    var data = 'email=' + encodeURIComponent(email);
-    
-    // Send data to Google Apps Script
-    fetch('https://script.google.com/macros/s/AKfycbw8Sm_dkyArBScjHj9FrZ4UKilabrLfoojJYSpcs0R4Ebkg6z54mtBDFWxoSJctrY8Vyg/exec', { 
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',  // Make sure data is encoded properly
-      },
-      body: data // Send the email data
-    })
-    .then(response => response.json()) // Parse the JSON response
-    .then(data => {
-      if (data.status === 'success') {
-        alert('Email successfully submitted!');
-      } else {
-        alert('Submission failed.');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('There was an error submitting the form.');
-    });
+  event.preventDefault();
+  
+  var email = document.getElementById('subscribe-form-email').value;
+  var data = 'email=' + encodeURIComponent(email);
+  
+  var url = 'https://script.google.com/macros/s/AKfycbzs5p8Bp4bz83EpSQ3LqLxNGLaSCbbn8R7oseHGjmHMzwW9E_RKGK-gycPK_YUU0lJY6Q/exec';
+  
+  // First, send a GET request to handle CORS preflight
+  fetch(url + '?' + data, { 
+    method: 'GET',
+    mode: 'cors',
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'success') {
+      alert('Email successfully submitted!');
+    } else {
+      alert('Submission failed: ' + (data.message || 'Unknown error'));
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('There was an error submitting the form.');
   });
+});
 </script>
 
 
