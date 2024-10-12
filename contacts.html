@@ -236,21 +236,31 @@
     <script src="js/script.js"></script>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwPvX0pFzudvJaSuBEyuxNwk6IRqejtTJc8qDfuZHfGarAajFnq6TT0wbQU0fnY2zEG/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwPvX0pFzudvJaSuBEyuxNwk6IRqejtTJc8qDfuZHfGarAajFnq6TT0wbQU0fnY2zEG/exec';
+    const form = document.forms['contact-form'];
 
-
-    const form = document.forms['contact-form']
-    
-    
     form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Thank you! your form is submitted successfully." ))
-      .then(() => { window.location.reload(); })
-      .catch(error => console.error('Error!', error.message))
-    })
-    
-</script>    
+        e.preventDefault();
+
+        // Example validation: Check if specific fields are filled
+        const name = form.querySelector('input[name="name"]').value.trim();
+        const email = form.querySelector('input[name="email"]').value.trim();
+        const message = form.querySelector('textarea[name="message"]').value.trim();
+        const phone = form.querySelector('input[name="phone"]').value.trim();
+
+
+        // Simple validation: Show alert if fields are empty
+        if (!name || !email || !message ||!phone) {
+            alert("Please fill in all the required fields.");
+            return; // Stop form submission if fields are empty
+        }
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Thank you! Your form is submitted successfully."))
+            .then(() => { window.location.reload(); })
+            .catch(error => console.error('Error!', error.message));
+    });
+</script>
 
 
   </body>
