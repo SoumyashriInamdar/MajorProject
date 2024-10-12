@@ -73,16 +73,15 @@
               <h2 id="signup" class="wow fadeIn">Marketing That Generates Results</h2>
               <h4 class="text-default wow fadeIn" data-wow-delay=".2s">Get the free checklist with 7 ways to improve your business.</h4>
              
-              <form class="rd-form rd-mailform form-shadow block-11 ot50" id="signupForm">
-  <div class="form-wrap">
-    <input class="form-input text-center" id="subscribe-form-email" type="email" name="email" required>
-    <label class="form-label text-center" for="subscribe-form-email">Your E-mail</label>
-  </div>                                                                            
-
-  <div class="form-button">
-    <button class="button button-block button-primary button-winona" type="submit">Sign Up</button>
-  </div>
-</form>
+             <form method="post" action="https://script.google.com/macros/s/AKfycby1N2YdwJN5eN6T7BEvfO0_T4qnbGgUjmWG0AkIPHjwzoJCcGd-xygM3n4-AdNN-VvL/exec" name="signup-Form" class="rd-form rd-mailform form-shadow block-11 ot50" id="signupForm">
+                <div class="form-wrap">
+                  <input class="form-input text-center" id="subscribe-form-email" type="email" name="email" required>
+                  <label class="form-label text-center" for="subscribe-form-email">Your E-mail</label>
+                </div>
+                <div class="form-button">
+                  <button class="button button-block button-primary button-winona" type="submit">Sign Up</button>
+                </div>
+              </form>
              
               
             </div>
@@ -403,35 +402,21 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
 
-    <script>
-  // Use the correct ID for the form element
-  document.getElementById('signupForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  var email = document.getElementById('subscribe-form-email').value;
-  var data = 'email=' + encodeURIComponent(email);
-  
-  var url = 'https://script.google.com/macros/s/AKfycbzs5p8Bp4bz83EpSQ3LqLxNGLaSCbbn8R7oseHGjmHMzwW9E_RKGK-gycPK_YUU0lJY6Q/exec';
-  
-  // First, send a GET request to handle CORS preflight
-  fetch(url + '?' + data, { 
-    method: 'GET',
-    mode: 'cors',
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.status === 'success') {
-      alert('Email successfully submitted!');
-    } else {
-      alert('Submission failed: ' + (data.message || 'Unknown error'));
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('There was an error submitting the form.');
-  });
-});
-</script>
+     <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby1N2YdwJN5eN6T7BEvfO0_T4qnbGgUjmWG0AkIPHjwzoJCcGd-xygM3n4-AdNN-VvL/exec'
+
+
+const form = document.forms['signup-Form']
+
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+        </script>
 
 
 
