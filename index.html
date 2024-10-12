@@ -399,27 +399,36 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
 <script>
-  function submitForm() {
+  document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    
+    // Get email value from the form
     var email = document.getElementById('subscribe-form-email').value;
     
-    fetch('https://script.google.com/macros/s/AKfycbzKTNnqyv02kqW4HeaRXCWEPEzk8EkzFdqXyHUugXRUzdlWuqT2upWQQKS6QJhlxT28ZA/exec', {
+    // Prepare data for sending
+    var data = 'email=' + encodeURIComponent(email);
+    
+    // Send data to Google Apps Script
+    fetch('https://script.google.com/macros/s/AKfycbzodITz35NlKMoJYgwXfqgHwHJiD--D6ErMFNi2n22HDVYAAnJyrFBKxlmABeN-lWEtMA/exec', { // Replace with your Google Apps Script Web App URL
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email })
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',  // Make sure data is encoded properly
+      },
+      body: data // Send the email data
     })
-    .then(response => response.json())
+    .then(response => response.json()) // Parse the JSON response
     .then(data => {
       if (data.status === 'success') {
-        alert('Sign up successful!');
+        alert('Email successfully submitted!');
       } else {
-        alert('Sign up failed!');
+        alert('Submission failed.');
       }
     })
     .catch(error => {
       console.error('Error:', error);
-      alert('There was an error during the signup process.');
+      alert('There was an error submitting the form.');
     });
-  }
+  });
 </script>
 
 
