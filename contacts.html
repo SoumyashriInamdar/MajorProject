@@ -13,7 +13,7 @@
     <style>.ie-panel{display: flex;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: flex;}</style>
   </head>
   <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="ie-panel"><a href="#"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader" id="loading">
       <div class="preloader-body">
         <div id="loading-center-object">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="page">
-      <!-- Page Header--><a class="banner banner-top" href="#" target="_blank"><img src="images/monstroid.jpg" alt="" height="0"></a>
+      <!-- Page Header--><a class="banner banner-top" href="#" target="_blank"><img src="images/headernew.jpg" alt="" height="0"></a>
       <header class="section page-header">
         <!-- RD Navbar-->
         <div class="rd-navbar-wrap">
@@ -48,7 +48,7 @@
                   </li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
                   </li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts Us</a>
                   </li>
                    <li class="rd-nav-item"><a class="rd-nav-link" href="portfolio.html">Portfolio</a>
                   </li>
@@ -65,12 +65,12 @@
         </div>
       </header>
       <section class="breadcrumbs-custom">
-        <section class="section parallax-container breadcrumbs-custom-main context-dark" data-parallax-img="images/bg-image-1.jpg">
+        <section class="section parallax-container breadcrumbs-custom-main context-dark" data-parallax-img="images/contact us.jpeg">
           <div class="parallax-content">
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-xl-9">
-                  <h2 class="breadcrumbs-custom-title">Contacts</h2>
+                  <h2 class="breadcrumbs-custom-title"></h2>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@
           <div class="container">
             <ul class="breadcrumbs-custom-path">
               <li><a href="index.html">Home</a></li>
-              <li class="active">Contacts</li>
+              <li class="active">Contact Us</li>
             </ul>
           </div>
         </div>
@@ -142,7 +142,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-9">
               <!-- RD Mailform-->
-              <form class="rd-mailform rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <form class="rd-mailform rd-form" data-form-output="form-output-global" data-form-type="contact" method="post" action="https://script.google.com/macros/s/AKfycbwPvX0pFzudvJaSuBEyuxNwk6IRqejtTJc8qDfuZHfGarAajFnq6TT0wbQU0fnY2zEG/exec" name="contact-form">
                 <div class="row row-x-16 row-20">
                   <div class="col-md-6">
                     <div class="form-wrap">
@@ -164,7 +164,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-wrap">
-                      <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@PhoneNumber">
+                      <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
                       <label class="form-label" for="contact-phone">Phone</label>
                     </div>
                   </div>
@@ -179,7 +179,7 @@
           </div>
         </div>
       </section>
-      <!-- Page Footer--><a class="banner" href="https://www.templatemonster.com/website-templates/monstroid2.html" target="_blank"><img src="images/monstroid_big.jpg" alt="" height="0"></a>
+      <!-- Page Footer--><a class="banner" href="#" target="_blank"><img src="images/footernew.jpg" alt="" height="0"></a>
       <footer class="section footer-classic">
         <div class="footer-classic-main">
           <div class="container">
@@ -234,5 +234,24 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwPvX0pFzudvJaSuBEyuxNwk6IRqejtTJc8qDfuZHfGarAajFnq6TT0wbQU0fnY2zEG/exec'
+
+
+    const form = document.forms['contact-form']
+    
+    
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thank you! your form is submitted successfully." ))
+      .then(() => { window.location.reload(); })
+      .catch(error => console.error('Error!', error.message))
+    })
+    
+</script>    
+
+
   </body>
 </html>
