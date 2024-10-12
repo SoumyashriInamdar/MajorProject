@@ -72,15 +72,15 @@
             <div class="box-custom-2-inner">
               <h2 id="signup" class="wow fadeIn">Marketing That Generates Results</h2>
               <h4 class="text-default wow fadeIn" data-wow-delay=".2s">Get the free checklist with 7 ways to improve your business.</h4>
-              <form class="rd-form rd-mailform form-shadow block-11 ot50" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                <div class="form-wrap">
-                  <input class="form-input text-center" id="subscribe-form-email" type="email" name="email" data-constraints="@Email @Required">
-                  <label  class="form-label text-center" for="subscribe-form-email">Your E-mail</label>
-                </div>
-                <div class="form-button">
-                  <button class="button button-block button-primary button-winona" type="submit">Sign Up</button>
-                </div>
-              </form>
+              <form class="rd-form rd-mailform form-shadow block-11 ot50" id="signupForm">
+  <div class="form-wrap">
+    <input class="form-input text-center" id="subscribe-form-email" type="email" name="email" required>
+    <label class="form-label text-center" for="subscribe-form-email">Your E-mail</label>
+  </div>
+  <div class="form-button">
+    <button class="button button-block button-primary button-winona" type="button" onclick="submitForm()">Sign Up</button>
+  </div>
+</form>
             </div>
           </div>
         </div>
@@ -398,5 +398,32 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+<script>
+  function submitForm() {
+    var email = document.getElementById('subscribe-form-email').value;
+    
+    fetch('https://script.google.com/macros/s/AKfycbzKTNnqyv02kqW4HeaRXCWEPEzk8EkzFdqXyHUugXRUzdlWuqT2upWQQKS6QJhlxT28ZA/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        alert('Sign up successful!');
+      } else {
+        alert('Sign up failed!');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was an error during the signup process.');
+    });
+  }
+</script>
+
+
+
+    
   </body>
 </html>
