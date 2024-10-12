@@ -402,21 +402,29 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
 
-     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycby1N2YdwJN5eN6T7BEvfO0_T4qnbGgUjmWG0AkIPHjwzoJCcGd-xygM3n4-AdNN-VvL/exec'
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby1N2YdwJN5eN6T7BEvfO0_T4qnbGgUjmWG0AkIPHjwzoJCcGd-xygM3n4-AdNN-VvL/exec';
+  const form = document.forms['signup-Form'];
 
+  form.addEventListener('submit', e => {
+      e.preventDefault();
 
-const form = document.forms['signup-Form']
+      // Example validation: Check if specific fields are filled
+      const email = form.querySelector('input[name="email"]').value.trim();
 
+      // Simple validation: Show alert if fields are empty
+      if (!email) {
+          alert("Please fill in all the required fields.");
+          return; // Stop form submission if fields are empty
+      }
 
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => alert("Thank you! your form is submitted successfully." ))
-  .then(() => { window.location.reload(); })
-  .catch(error => console.error('Error!', error.message))
-})
-        </script>
+      // If all required fields are filled, proceed with the form submission
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response => alert("Thank you! Your form is submitted successfully."))
+          .then(() => { window.location.reload(); })
+          .catch(error => console.error('Error!', error.message));
+  });
+</script>
 
 
 
