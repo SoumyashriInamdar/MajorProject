@@ -13,7 +13,7 @@
     <style>.ie-panel{display: flex;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: flex;}</style>
   </head>
   <body>
-    <div class="ie-panel"><a href="#"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="ie-panel"><a ><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader" id="loading">
       <div class="preloader-body">
         <div id="loading-center-object">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="page">
-      <!-- Page Header--><a class="banner banner-top" href="#" target="_blank"><img src="images/headernew.jpg" alt="" height="0"></a>
+      <!-- Page Header--><a class="banner banner-top"  target="_blank"><img src="images/headernew.jpg" alt="" height="0"></a>
       <header class="section page-header">
         <!-- RD Navbar-->
         <div class="rd-navbar-wrap">
@@ -46,11 +46,12 @@
                   </li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="about-us.html">About Us</a>
                   </li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
+                 <li class="rd-nav-item"><a class="rd-nav-link" href="portfolio.html">Portfolio</a>
                   </li>
-                  <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.html">Contacts Us</a>
+                   <li class="rd-nav-item"><a class="rd-nav-link" href="typography.html">Typography</a>
+                
                   </li>
-                   <li class="rd-nav-item"><a class="rd-nav-link" href="portfolio.html">Portfolio</a>
+                     <li class="rd-nav-item active"><a class="rd-nav-link" href="contacts.html">Contact Us</a>
                   </li>
                 </ul>
                 <div class="rd-navbar-tel">
@@ -227,7 +228,7 @@
         </div>
         <div class="footer-classic-aside">
           <div class="container">
-            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="#">TemplateMonster</a></p>
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a >TemplateMonster</a></p>
           </div>
         </div>
       </footer>
@@ -243,17 +244,17 @@
     form.addEventListener('submit', e => {
         e.preventDefault();
 
-        // Example validation: Check if specific fields are filled
+       
         const name = form.querySelector('input[name="name"]').value.trim();
         const email = form.querySelector('input[name="email"]').value.trim();
         const message = form.querySelector('textarea[name="message"]').value.trim();
         const phone = form.querySelector('input[name="phone"]').value.trim();
 
 
-        // Simple validation: Show alert if fields are empty
+        
         if (!name || !email || !message ||!phone) {
             alert("Please fill in all the required fields.");
-            return; // Stop form submission if fields are empty
+            return; 
         }
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
