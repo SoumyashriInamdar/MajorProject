@@ -46,12 +46,7 @@
             padding: 0 20px;
         }
         
-        header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
+        
         
         h1 {
             font-size: 2.5rem;
@@ -256,6 +251,12 @@
           </div>
         </div>
       </section>
+
+<h1>Showcase Your Creative Mastery: Explore Our Video Portfolio </h1>
+<h4> At Editkaro.in, we bring your visions to life through the power of video. Our curated portfolio highlights a diverse range of expertly crafted videos, from dynamic corporate presentations to captivating event highlights and artistic storytelling. Each project in our collection reflects our commitment to creativity, precision, and attention to detail.
+
+    Whether you're seeking inspiration for your next project or looking to collaborate with our skilled team, our portfolio is a testament to the high-quality video editing and production services we offer. Dive in and explore how we can turn your ideas into visually compelling stories!</h4>
+        
     <main>
         <div class="container">
             <div class="category-filters">
@@ -287,41 +288,31 @@
         const videos = [
             { title: "Exciting Short Video 1", category: "short-form", url: "https://drive.google.com/file/d/1msKoIXieXecn73Ggov7-K5Ncg-E_ZyVJ/preview",thumbnail:"https://imgv3.fotor.com/images/blog-cover-image/best-youtube-shorts-thumbnail-size_2023-09-28-033838_uvcg.png" },
             
- { title: "Exciting Short Video 2", category: "short-form", url: "https://drive.google.com/file/d/1JFzqJtAM67m52dcsSuQJQI4J3GCGNONc/preview",thumbnail:"https://i.ytimg.com/vi/IdEpRs27Iiw/maxresdefault.jpg" },
+            { title: "Exciting Short Video 2", category: "short-form", url: "https://drive.google.com/file/d/1JFzqJtAM67m52dcsSuQJQI4J3GCGNONc/preview",thumbnail:"https://i.ytimg.com/vi/IdEpRs27Iiw/maxresdefault.jpg" },
            
- { title: "In-depth Documentary", category: "documentary", url: "https://drive.google.com/file/d/1LMBXgn8gw0LD2LjsPmCR_pQXCacfZAV9/preview" ,thumbnail:"https://s3.amazonaws.com/pbblogassets/uploads/2015/03/header-image-337757-865x505.jpg"},
+             { title: "In-depth Documentary", category: "documentary", url: "https://drive.google.com/file/d/1LMBXgn8gw0LD2LjsPmCR_pQXCacfZAV9/preview" ,thumbnail:"https://s3.amazonaws.com/pbblogassets/uploads/2015/03/header-image-337757-865x505.jpg"},
            
-{ title: "Documentary", category: "documentary", url: "https://drive.google.com/file/d/1Us9oO28sjfLtelPR5ZZ_GL9KlhESFeD6/preview" ,thumbnail:"https://www.trendingnews.news/wp-content/uploads/2019/05/Self-Improvement.jpg"},
+            { title: "Documentary", category: "documentary", url: "https://drive.google.com/file/d/1Us9oO28sjfLtelPR5ZZ_GL9KlhESFeD6/preview" ,thumbnail:"https://www.trendingnews.news/wp-content/uploads/2019/05/Self-Improvement.jpg"},
 
-
-
-
-
-
-
- { title: "Epic Gaming Montage", category: "gaming", url: "https://drive.google.com/file/d/13YxW_9aOEQVwZckVR8LZRPK6xAWsxUYe/preview",thumbnail:"https://bitrebels.com/wp-content/uploads/2020/12/gaming-setup-smooth-gaming-experience-image1.jpg" },
+             { title: "Epic Gaming Montage", category: "gaming", url: "https://drive.google.com/file/d/13YxW_9aOEQVwZckVR8LZRPK6xAWsxUYe/preview",thumbnail:"https://bitrebels.com/wp-content/uploads/2020/12/gaming-setup-smooth-gaming-experience-image1.jpg" },
 
 
             { title: "Football Highlights", category: "football", url: "https://drive.google.com/file/d/1LeB1BTVDXUlNPAztEoX7vUFHLITPE8Wy/preview" ,thumbnail:"https://tse1.mm.bing.net/th?id=OIP.RqsIGTlTFUFCYteOj50OtgHaHa&pid=Api&P=0&h=180"},
           
-  { title: "Product Showcase", category: "ecommerce", url: "https://drive.google.com/file/d/1KWDEYFB7kpZrsBBNmM1SC_GL9GtjbRX6/preview",thumbnail:"https://www.weverve.com/wp-content/uploads/2020/10/ecommerce-1.jpg" },
+          { title: "Product Showcase", category: "ecommerce", url: "https://drive.google.com/file/d/1KWDEYFB7kpZrsBBNmM1SC_GL9GtjbRX6/preview",thumbnail:"https://www.weverve.com/wp-content/uploads/2020/10/ecommerce-1.jpg" },
 
- { title: "Product Showcase 2", category: "ecommerce", url: "https://drive.google.com/file/d/1WvF0RNkmXyJDmDYicLShM1EJ_hrAvQ0m/preview",thumbnail:"https://i.pinimg.com/736x/59/86/78/598678be3fcf7db660a801b6e30c15d9.jpg" },
+         { title: "Product Showcase 2", category: "ecommerce", url: "https://drive.google.com/file/d/1WvF0RNkmXyJDmDYicLShM1EJ_hrAvQ0m/preview",thumbnail:"https://i.pinimg.com/736x/59/86/78/598678be3fcf7db660a801b6e30c15d9.jpg" },
 
 
             { title: "Long Form Videos 1", category: "long-form", url: "https://drive.google.com/file/d/159CqKZBe0K7TcAe7C9_8YxOqBY2wreRa/preview",thumbnail:"https://blackwoodcreative.com/wp-content/uploads/2019/08/Long-form-videos-01-1024x640.jpg" },
 
- { title: "Long Form Videos 2", category: "long-form", url: "https://drive.google.com/file/d/1QKFn-iT0_bB9EXXSCMqDQ5kxFCbK3VEg/preview",thumbnail:"http://4.bp.blogspot.com/-Q4kxhoeTHJE/WjxsLOrhYvI/AAAAAAAAACc/AJxI3ZzOz8MP3MEQVbHvRB7VnqwBuwbHgCK4BGAYYCw/s1600/3521_2408659_236622_image.jpg" },
-
-
+         { title: "Long Form Videos 2", category: "long-form", url: "https://drive.google.com/file/d/1QKFn-iT0_bB9EXXSCMqDQ5kxFCbK3VEg/preview",thumbnail:"http://4.bp.blogspot.com/-Q4kxhoeTHJE/WjxsLOrhYvI/AAAAAAAAACc/AJxI3ZzOz8MP3MEQVbHvRB7VnqwBuwbHgCK4BGAYYCw/s1600/3521_2408659_236622_image.jpg" },
 
             { title: "Color Grading Reel", category: "color-grading", url: "https://drive.google.com/file/d/1Z44prGPhxNrI-EAnlAIjYPBaCcKsl-70/preview" ,thumbnail:"https://www.cined.com/content/uploads/2023/03/color_grading_with_AI_color_creative_week-feature_image_v3.jpg"},
+           
             { title: "Anime Music Video", category: "anime", url: "https://drive.google.com/file/d/1phDRwovujmjm77B6vT0NnVfvX9Fb8EM2/preview" ,thumbnail:"https://tse3.mm.bing.net/th?id=OIP.9KiJpCPQHYGtFp1-q-AJBAHaEK&pid=Api&P=0&h=180"},
 
-{ title: "Anime Video", category: "anime", url: "https://drive.google.com/file/d/1DlDYiUlyCRQyBl-neNiCIV3szQnC-HtO/preview" ,thumbnail:"https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/10-roronoa-zoro-nguyen-hai.jpg"},
-
-
-
+        { title: "Anime Video", category: "anime", url: "https://drive.google.com/file/d/1DlDYiUlyCRQyBl-neNiCIV3szQnC-HtO/preview" ,thumbnail:"https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/10-roronoa-zoro-nguyen-hai.jpg"},
 
             { title: "TV Commercial", category: "ads", url: "https://drive.google.com/file/d/1J56RJ4AZaT7PpqsSmj6JZH1vhSkeH60r/preview",thumbnail:"http://louis-henwood.com/wp-content/uploads/2016/Heroes/Coke-Zero-2013-A2-portrait.jpg?_t=1525364019" },
         ];
